@@ -234,8 +234,7 @@ footer span {
 }
 
 #avatar {
-    width: 15em;
-    filter: brightness(0.93);
+    width: 16em;
 }
 
 .skin-color{fill:#F1C27C;}
@@ -252,6 +251,7 @@ footer span {
     width: 3.5em;
     margin-bottom: 0.75em;
     opacity: 0.2;
+    display: none;
 }
 
 .lightbulb-outline {fill: var(--black);}
@@ -262,11 +262,6 @@ footer span {
 #lightbulb,
 .lightbulb-color {
     transition: all 0.5s ease;
-}
-
-#lightbulb.lightbulb-on {
-    opacity: 1;
-    animation: floating-lightbulb 2.5s infinite ease-in-out;
 }
 
 @keyframes floating-lightbulb {
@@ -411,7 +406,6 @@ header {
     width: 100%;
     max-width: 850px;
     fill: var(--bg-text-color);
-    animation: float 3s infinite ease-in-out;
 }
 
 @keyframes float {
@@ -667,11 +661,6 @@ footer {
     #showcase {
         flex-direction: row;
     }
-
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-    }
     
     .hamburger,
     .active.nav-open-overlay,
@@ -704,6 +693,11 @@ footer {
         padding: none;
         border-top: none;
     }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 /*laptop & desktop styles*/
@@ -716,6 +710,23 @@ footer {
     .project-card-body,
     footer {
         font-size: 18px;
+    }
+
+    #avatar {
+        filter: brightness(0.93);
+    }
+
+    #lightbulb.lightbulb-on {
+        opacity: 1;
+        animation: floating-lightbulb 2.5s infinite ease-in-out;
+    }
+
+    #lightbulb {
+        display: initial;
+    }
+
+    .bg-text {
+        animation: float 3s infinite ease-in-out;
     }
 
     .project-card-image {
