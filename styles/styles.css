@@ -433,6 +433,15 @@ header {
     margin: 0 auto;
 }
 
+/* mobile styles - about section */
+.hobbies-img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+
 /* mobile styles, projects section */
 #projects {
     border-radius: 0 0 3em 3em;
@@ -727,6 +736,14 @@ footer {
 
     .bg-text {
         animation: float 3s infinite ease-in-out;
+    }
+
+    .hobbies-img {
+        filter: brightness(0.8);
+    }
+
+    .section:hover .hobbies-img {
+        filter: brightness(1);
     }
 
     .project-card-image {
