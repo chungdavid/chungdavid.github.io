@@ -43,6 +43,7 @@ if (currentMode) {
 
     if (currentMode === "dark") {
         darkModeSwitch.checked = true;
+        projectImg.forEach(a => a.style.filter = "brightness(0.85)");
     }
 }
 
@@ -50,12 +51,10 @@ function switchMode(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute("mode", "dark");
         localStorage.setItem("mode", "dark");
-        //reduce brightness of images in dark mode
         projectImg.forEach(a => a.style.filter = "brightness(0.85)");
     } else {
         document.documentElement.setAttribute("mode", "light");
         localStorage.setItem("mode", "light");
-        //switch brightness of images back to normal in light mode
         projectImg.forEach(a => a.style.filter = "brightness(1)");
     }
 }
