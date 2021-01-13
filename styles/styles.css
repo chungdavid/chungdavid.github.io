@@ -167,6 +167,11 @@ h1 {
     margin-bottom: 1em;
 }
 
+.paragraph-link {
+    text-decoration: underline;
+    color: var(--black);
+}
+
 .project-card-body h3 {
     font-weight: 700;
     font-size: 1.5em;
