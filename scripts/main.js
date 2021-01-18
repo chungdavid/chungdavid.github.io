@@ -97,6 +97,7 @@ function filterProjects(className) {
         projectCards.forEach(a => {
             if (a.classList.contains(className) == false) {
                 a.classList.add("hide");
+                a.parentNode.appendChild(a);
             } else {
                 a.classList.remove("hide");
             }
