@@ -84,3 +84,22 @@ showcase.forEach(function(a) {
         document.querySelector(".lightbulb-shine").style.opacity = "0";
     });
 });
+
+//filter projects when a filter is chosen
+const projectCards = document.querySelectorAll(".project-card");
+
+function filterProjects(className) {
+    if (className == 'all') {
+        projectCards.forEach(a => {
+            a.classList.remove("hide");
+        });
+    } else {
+        projectCards.forEach(a => {
+            if (a.classList.contains(className) == false) {
+                a.classList.add("hide");
+            } else {
+                a.classList.remove("hide");
+            }
+        });
+    } 
+}

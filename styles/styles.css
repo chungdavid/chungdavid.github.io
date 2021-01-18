@@ -456,15 +456,46 @@ header {
     border-radius: 0 0 3em 3em;
 }
 
+.project-filters {
+    margin-top: 0.5em;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.project-filter {
+    font-size: 0.875em;
+    display: inline-block;
+    border: 1.5px solid var(--grey);
+    color: var(--grey);
+    padding: 0.25em 1em;
+    border-radius: 1em;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+.project-filter:hover,
+input[type="radio"]:checked + .project-filter {
+    border-color: var(--blue-700);
+    background-color: var(--blue-700);
+    color: var(--white);   
+}
+
 .projects-container {
     width: 100%;
-    padding-top: 1em;
+    padding-top: 2em;
 }
 
 .project-card {
     margin-bottom: 2.5em;
     display: flex;
     flex-direction: column;
+}
+
+.project-card.hide {
+    display: none;
 }
 
 .project-card-image {

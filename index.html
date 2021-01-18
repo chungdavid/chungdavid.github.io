@@ -179,10 +179,16 @@
         <div class="section-content">
             <h2 class="section-heading">Projects</h2>
             <p class="section-text">Here are some of my projects over the years... See more on <a class="paragraph-link" href="https://github.com/chungdavid" target="_blank">GitHub</a>.</p>
+            <div class="project-filters"> 
+                <input type="radio" id="all" name="filters" onchange="filterProjects('all')" checked><label for="all" class="project-filter">All</label>
+                <input type="radio" id="development" name="filters" onchange="filterProjects('development')"><label for="development" class="project-filter">Software Development</label>
+                <input type="radio" id="design" name="filters" onchange="filterProjects('design')"><label for="design" class="project-filter">Design</label>
+                <input type="radio" id="other" name="filters" onchange="filterProjects('other')"><label for="other" class="project-filter">Other</label>
+            </div>
             <div class="projects-container">
 
                 <!--project card 1-->
-                <div class="project-card" data-aos="fade-up" data-aos-duration="750">
+                <div class="project-card design other" data-aos="fade-up" data-aos-duration="750">
                     <div class="project-card-image">
                         <img src="assets/images/fof.jpg">
                     </div>
@@ -211,7 +217,7 @@
                 </div>
 
                 <!--project card 2-->
-                <div class="project-card" data-aos="fade-up" data-aos-duration="750">
+                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
                     <div class="project-card-image">
                         <img src="assets/images/logo.jpg">
                     </div>
@@ -237,7 +243,7 @@
                 </div>
 
                 <!--project card 3-->
-                <div class="project-card" data-aos="fade-up" data-aos-duration="750">
+                <div class="project-card design other" data-aos="fade-up" data-aos-duration="750">
                     <div class="project-card-image">
                         <img src="assets/images/eminent.jpg">
                     </div>
@@ -264,7 +270,7 @@
                 </div>
 
                 <!--project card 4-->
-                <div class="project-card" data-aos="fade-up" data-aos-duration="750">
+                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
                     <div class="project-card-image">
                         <img src="assets/images/back-inspector.jpg">
                     </div>
