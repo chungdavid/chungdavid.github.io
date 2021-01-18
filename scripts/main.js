@@ -92,14 +92,16 @@ function filterProjects(className) {
     if (className == 'all') {
         projectCards.forEach(a => {
             a.classList.remove("hide");
+            AOS.refresh();
         });
     } else {
         projectCards.forEach(a => {
             if (a.classList.contains(className) == false) {
                 a.classList.add("hide");
-                a.parentNode.appendChild(a);
+                AOS.refresh(); 
             } else {
                 a.classList.remove("hide");
+                AOS.refresh();
             }
         });
     } 
