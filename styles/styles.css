@@ -448,7 +448,6 @@ header {
 .hobbies-img {
     width: 100%;
     max-width: 21em;
-    transition: all 0.5s ease;
 }
 
 /* mobile styles, projects section */
@@ -473,7 +472,6 @@ input[type="radio"] {
     border-radius: 1em;
     margin-bottom: 4px;
     cursor: pointer;
-    transition: all 0.5 ease;
 }
 
 .project-filter:hover,
@@ -785,14 +783,6 @@ footer {
 
     .bg-text {
         animation: float 3s infinite ease-in-out;
-    }
-
-    .hobbies-img {
-        filter: brightness(0.8);
-    }
-
-    .section:hover .hobbies-img {
-        filter: brightness(1);
     }
 
     .project-card-image {
