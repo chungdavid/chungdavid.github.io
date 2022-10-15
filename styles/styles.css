@@ -168,8 +168,16 @@ h1 {
 }
 
 .paragraph-link {
-    text-decoration: underline;
-    color: var(--black);
+    font-weight: 500;
+    color: var(--blue-600);
+    background-color: var(--bg-text-color);
+    padding: 0em 0.15em;
+    border-radius: 0.115em;
+}
+
+.paragraph-link:hover {
+    opacity: 85%;
+    transition: all 0.3s ease;
 }
 
 .project-card-body h3 {
