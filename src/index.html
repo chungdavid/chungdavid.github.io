@@ -155,154 +155,93 @@
     </section>
 
     <!--welcome-->
+    {% set welcomeSection = collections.welcome[0] %}
     <section id="welcome" class="welcome-section">
         <div class="welcome-content">
             <svg class="bg-text" xmlns="http://www.w3.org/2000/svg" viewBox="-151 369.2 303.9 47.3"><path d="M-112.6 398.7l5.3-28.8h11l-9.8 46h-11.5l-6.2-26.2 -6 26.2h-11.5l-9.8-46h11l5.3 28.8 6.3-28.8h9.4L-112.6 398.7z"/><path d="M-63.4 396.3h-17.4v11h20.6v8.5H-92v-46h31.7v8.6h-20.7v9.7h17.4V396.3z"/><path d="M-44.7 407.3h19.3v8.5h-30.4v-46h11.1V407.3z"/><path d="M14.5 400.2c-0.1 3.2-1 6-2.6 8.5 -1.6 2.5-3.8 4.4-6.6 5.7 -2.9 1.3-6.1 2-9.8 2 -6 0-10.8-2-14.3-5.9 -3.5-3.9-5.2-9.5-5.2-16.7v-2.3c0-4.5 0.8-8.5 2.4-11.8 1.6-3.4 3.8-6 6.8-7.8 2.9-1.8 6.4-2.8 10.2-2.8 5.6 0 10.1 1.5 13.5 4.4 3.4 2.9 5.3 7 5.8 12.1H3.5c-0.1-2.8-0.8-4.8-2.1-6 -1.3-1.2-3.3-1.8-6.1-1.8 -2.8 0-4.8 1-6.1 3.1 -1.3 2.1-2 5.4-2 9.9v3.3c0 4.9 0.6 8.4 1.8 10.5 1.2 2.1 3.4 3.2 6.4 3.2 2.5 0 4.5-0.6 5.8-1.8 1.3-1.2 2.1-3.1 2.1-5.7H14.5z"/><path d="M58.7 393.8c0 4.5-0.8 8.5-2.5 11.9 -1.7 3.5-4 6.1-7.1 8 -3.1 1.9-6.6 2.8-10.5 2.8s-7.4-0.9-10.4-2.7 -5.4-4.4-7.1-7.7 -2.6-7.2-2.7-11.5v-2.6c0-4.5 0.8-8.5 2.5-11.9s4-6.1 7.1-8c3.1-1.9 6.6-2.8 10.5-2.8 3.9 0 7.4 0.9 10.4 2.8 3.1 1.9 5.4 4.5 7.1 7.9 1.7 3.4 2.6 7.3 2.6 11.8V393.8zM47.4 391.8c0-4.6-0.8-8-2.3-10.4 -1.5-2.4-3.7-3.6-6.6-3.6 -5.6 0-8.5 4.2-8.8 12.5l0 3.4c0 4.5 0.7 8 2.2 10.4s3.7 3.6 6.7 3.6c2.8 0 5-1.2 6.5-3.6 1.5-2.4 2.3-5.8 2.3-10.3V391.8z"/><path d="M79 369.8l10.3 32 10.2-32h14.6v46h-11.1v-10.7l1.1-22 -11.1 32.7h-7.3l-11.2-32.8 1.1 22v10.7H64.4v-46H79z"/><path d="M149.6 396.3h-17.4v11h20.6v8.5h-31.7v-46h31.7v8.6h-20.7v9.7h17.4V396.3z"/></svg>
             <div class="welcome-text">
-                <h2 data-aos="zoom-in-up" data-aos-once="true" data-aos-delay="50" data-aos-duration="600">MY PERSONAL SITE</h2>
-                <p data-aos="zoom-in-up" data-aos-once="true" data-aos-delay="150" data-aos-duration="600">This website is simply a medium to explore my graphic design & web development skills, while also showcasing a bit about myself!</p>
+                <h2 data-aos="zoom-in-up" data-aos-once="true" data-aos-delay="50" data-aos-duration="600">{{ welcomeSection.data.title }}</h2>
+                <p data-aos="zoom-in-up" data-aos-once="true" data-aos-delay="150" data-aos-duration="600">{{ welcomeSection.data.message }}</p>
             </div>
         </div>
     </section>
 
     <!--about-->
+    {% set aboutSection = collections.about[0] %}
     <section id="about" class="section">
         <div class="section-content">
             <div class="about-text">
                 <h2 class="section-heading">About</h2>
-                <p class="section-text">I’m a fourth-year student at McMaster University studying Electrical Engineering. In my free time, I enjoy gardening, playing sports, running, hiking, and playing the guitar! I'm fascinated by robotics & autonomous systems, and the math & software behind it all.</p>
-                <p class="section-text">I know for sure that I want to <a class="paragraph-link" href="notes/tags/travel">travel</a> the world. One of my many life goals is to explore the planet and experience new places, cultures, and cuisines! There's a whole different world beyond our borders I can't wait to experience it. So, if you have any travel recommendations, please let me know and I'll add it to my already-overfilled travel bucket list!</p>
+                <div class="markdown-content">
+                    {{ aboutSection.content | safe }}
+                </div>
             </div>
-            <img class="hobbies-img" src="assets/images/hobbies.png" alt="Hobbies">
+            <img class="about-img" src="{{ aboutSection.data.image | safe }}" alt="About">
         </div>
     </section>
 
     <!--projects-->
+    {% set projectsSection = collections.projects[0] %}
     <section id="projects" class="section">
         <div class="section-content">
             <h2 class="section-heading">Projects</h2>
-            <p class="section-text">Here are some of my projects over the years... See more on <a class="paragraph-link" href="https://github.com/chungdavid" target="_blank">GitHub</a> and my <a class="paragraph-link" href="notes/tags/project/" target="_blank">notes</a>.</p>
+            <div class="markdown-content">
+                {{ projectsSection.content | safe }}
+            </div>
             <div class="project-filters"> 
                 <input type="radio" id="all" name="filters" onchange="filterProjects('all')" checked><label for="all" class="project-filter">All</label>
-                <input type="radio" id="development" name="filters" onchange="filterProjects('development')"><label for="development" class="project-filter">Development</label>
-                <input type="radio" id="design" name="filters" onchange="filterProjects('design')"><label for="design" class="project-filter">Design</label>
-                <!-- <input type="radio" id="other" name="filters" onchange="filterProjects('other')"><label for="other" class="project-filter">Other</label> -->
+                {% for filter in collections.projectFilters %}
+                    <input type="radio" id="filter-{{ filter.key }}" name="filters" onchange="filterProjects('filter-{{ filter.key }}')">
+                    <label for="filter-{{ filter.key }}" class="project-filter">{{ filter.label }}</label>
+                {% endfor %}
             </div>
             <div class="projects-container">
 
-                <!--project card-->
-                <div class="project-card development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/back-track.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>BackTrack</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>Nov 2022</span>
+                {% for project in collections.projectCards %}
+                    {% set filterClasses = (project.data.filters or []) | join(" ") %}
+                    <!--project card-->
+                    <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-duration="750">
+                        <div class="project-card-image">
+                            {% if project.data.image %}
+                                <img src="{{ project.data.image }}">
+                            {% endif %}
                         </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            BackTrack is a web app that tracks the user's posture in real-time using live video feed from their webcam, and notifes them when they are slouching. This project was inspired by my last co-op, where my work related to human pose estimation. I also have an interest in back pain as you can tell from my previous projects. Overall, this project was a great way to improve my React skills!
-                        </p>
-                        <div class="project-card-skills">
-                            <span>React</span>
-                            <span>HTML/CSS</span>
-                            <span>Human Pose Estimation</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://youtu.be/8nwTfgI1b7s">DEMO<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/back-track">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
+                        <div class="project-card-body">
+                            <h3>{{ project.data.title }}</h3>
 
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/travel-pal.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>TravelPal</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>May 2021</span>
-                        </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            Given my travel interests, it only makes sense that I work on a project related to it! TravelPal is a website where users can recieve practical travel information based on the country they're travelling to. I developed this website from scratch using HTML, CSS, Vanilla JavaScript, and the travelbriefing.org API. I learned a ton from this project, as it was my first time working with CSS grid, local storage, and APIs!
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                            <span>Adobe Illustrator</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://travel-pal.netlify.app/">VIEW PROJECT<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/travel-pal">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
+                            {% if project.data.date %}
+                                <div class="project-card-date">
+                                    <i class="far fa-calendar"></i><span>{{ project.date | monthYear }}</span>
+                                </div>
+                            {% endif %}
 
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/logo.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Personal Website</h3>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            This website, currently in its 1st version, is my first ever web development project. I created it with the goal of improving my graphic designing skills and learning web development. My logo & avatar were designed on Adobe Illustrator and the website was designed on Figma and built responsive & mobile-first with pure HTML, CSS, & Vanilla Javascript. I decided to build this website from scratch to truly gain a strong understanding of web development.
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Adobe Illustrator</span>
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://github.com/chungdavid/chungdavid.github.io">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/back-inspector.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Back Inspector</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>Jan 2021</span>
-                        </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            After reading a book about back pain, I decided to create Back Inspector - an online tool where users can recieve a self-assessment of their back pain by answering 14 questions. I created this project to improve my web development skills and reinforce some of the concepts I learned from the book.
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://back-inspector.netlify.app/">VIEW PROJECT<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/back-inspector">GITHUB<i class="fas fa-external-link-alt"></i></a>
+                            <div class="hr-container">
+                                <hr class="thick">
+                                <hr class="thin">
+                            </div>
+                            
+                            <p class="project-card-description">
+                                {{ project.data.description }}
+                            </p>
+                            
+                            {% if project.data.skills %}
+                                <div class="project-card-skills">
+                                    {% for skill in project.data.skills %}
+                                        <span>{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            
+                            {% if project.data.links and project.data.links.length %}
+                                <div class="project-card-links">
+                                    {% for link in project.data.links %}
+                                        <a target="_blank" href="{{ link.url }}">{{ link.text }}<i class="fas fa-external-link-alt"></i></a> 
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
-                </div>
+                {% endfor %}
 
             </div>
         </div>

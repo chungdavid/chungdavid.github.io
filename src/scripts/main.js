@@ -92,17 +92,17 @@ function filterProjects(className) {
     if (className == 'all') {
         projectCards.forEach(a => {
             a.classList.remove("hide");
-            AOS.refresh();
         });
     } else {
         projectCards.forEach(a => {
             if (a.classList.contains(className) == false) {
                 a.classList.add("hide");
-                AOS.refresh(); 
             } else {
                 a.classList.remove("hide");
-                AOS.refresh();
             }
         });
-    } 
+    }
+    if (window.AOS?.refresh) {
+        AOS.refresh();
+    }
 }

@@ -4,6 +4,7 @@ This website is my first ever web development project! Built from scratch with p
 ### 🛠️ Additional Tools:
 - Scroll animations were implemented with the **[AOS - Animate on Scroll](https://github.com/michalsnik/aos)** library
 - Particle effect was implemented with the **[particles.js](https://github.com/VincentGarreau/particles.js)** library
+- Markdown is statically generated using **[Eleventy](https://github.com/11ty/eleventy/)**
 
 
 
