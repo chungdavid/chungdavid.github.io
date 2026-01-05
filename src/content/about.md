@@ -1,5 +1,5 @@
 ---
-title: About
+image: /assets/images/hobbies.png
 ---
 
 I’m a fourth-year student at McMaster University studying Electrical Engineering. In my free time, I enjoy gardening, playing sports, running, hiking, and playing the guitar! I'm fascinated by robotics & autonomous systems, and the math & software behind it all.

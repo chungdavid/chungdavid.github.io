@@ -160,7 +160,8 @@ h1 {
     margin-bottom: 0.35em;
 }
 
-.section-text {
+.section-text,
+.markdown-content p {
     font-weight: 400;
     color: var(--black);
     font-size: 1.25 em;
@@ -453,7 +454,7 @@ header {
     align-items: center;
 }
 
-.hobbies-img {
+.about-img {
     width: 100%;
     max-width: 21em;
 }
@@ -722,7 +723,7 @@ footer {
         padding-right: 1em;
     }
 
-    .hobbies-img {
+    .about-img {
         width: 40%;
     }
     
