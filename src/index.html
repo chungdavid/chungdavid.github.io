@@ -190,16 +190,17 @@
             </div>
             <div class="project-filters"> 
                 <input type="radio" id="all" name="filters" onchange="filterProjects('all')" checked><label for="all" class="project-filter">All</label>
-                <input type="radio" id="development" name="filters" onchange="filterProjects('development')"><label for="development" class="project-filter">Development</label>
-                <input type="radio" id="design" name="filters" onchange="filterProjects('design')"><label for="design" class="project-filter">Design</label>
-                <!-- <input type="radio" id="other" name="filters" onchange="filterProjects('other')"><label for="other" class="project-filter">Other</label> -->
+                {% for filter in collections.projectFilters %}
+                    <input type="radio" id="filter-{{ filter.key }}" name="filters" onchange="filterProjects('filter-{{ filter.key }}')">
+                    <label for="filter-{{ filter.key }}" class="project-filter">{{ filter.label }}</label>
+                {% endfor %}
             </div>
             <div class="projects-container">
 
                 {% for project in collections.projects %}
                     {% set filterClasses = (project.data.filters or []) | join(" ") %}
                     <!--project card-->
-                    <div class="project-card development" data-aos="fade-up" data-aos-duration="750">
+                    <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-duration="750">
                         <div class="project-card-image">
                             {% if project.data.image %}
                                 <img src="{{ project.data.image }}">

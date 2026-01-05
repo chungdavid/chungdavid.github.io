@@ -1,3 +1,13 @@
+function slugify(str = "") {
+    return String(str)
+        .trim()
+        .toLowerCase()
+        .replace(/['"]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
+}
+
 export default async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/");
     eleventyConfig.addPassthroughCopy("src/scripts/");
@@ -7,6 +17,24 @@ export default async function(eleventyConfig) {
 
     eleventyConfig.setInputDirectory('src/');
 	eleventyConfig.setOutputDirectory('_site/');
+
+    eleventyConfig.addFilter("slugify", slugify);
+    eleventyConfig.addCollection("projectFilters", function (collectionApi) {
+        const items = collectionApi.getFilteredByGlob("src/content/projects/*.md");
+        const map = new Map(); // key=slug, value=label
+
+        for (const item of items) {
+            const filters = item.data.filters || [];
+            for (const label of filters) {
+                const key = slugify(label);
+                map.set(key, label);
+            }
+        }
+
+    return Array.from(map.entries())
+        .map(([key, label]) => ({ key, label }))
+        .sort((a, b) => a.label.localeCompare(b.label));
+    });
 
     eleventyConfig.addCollection("welcome", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/content/welcome.md");
