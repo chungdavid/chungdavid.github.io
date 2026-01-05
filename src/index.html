@@ -190,119 +190,51 @@
             </div>
             <div class="projects-container">
 
-                <!--project card-->
-                <div class="project-card development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/back-track.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>BackTrack</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>Nov 2022</span>
+                {% for project in collections.projects %}
+                    {% set filterClasses = (project.data.filters or []) | join(" ") %}
+                    <!--project card-->
+                    <div class="project-card development" data-aos="fade-up" data-aos-duration="750">
+                        <div class="project-card-image">
+                            {% if project.data.image %}
+                                <img src="{{ project.data.image }}">
+                            {% endif %}
                         </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            BackTrack is a web app that tracks the user's posture in real-time using live video feed from their webcam, and notifes them when they are slouching. This project was inspired by my last co-op, where my work related to human pose estimation. I also have an interest in back pain as you can tell from my previous projects. Overall, this project was a great way to improve my React skills!
-                        </p>
-                        <div class="project-card-skills">
-                            <span>React</span>
-                            <span>HTML/CSS</span>
-                            <span>Human Pose Estimation</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://youtu.be/8nwTfgI1b7s">DEMO<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/back-track">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
+                        <div class="project-card-body">
+                            <h3>{{ project.data.title }}</h3>
 
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/travel-pal.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>TravelPal</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>May 2021</span>
-                        </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            Given my travel interests, it only makes sense that I work on a project related to it! TravelPal is a website where users can recieve practical travel information based on the country they're travelling to. I developed this website from scratch using HTML, CSS, Vanilla JavaScript, and the travelbriefing.org API. I learned a ton from this project, as it was my first time working with CSS grid, local storage, and APIs!
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                            <span>Adobe Illustrator</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://travel-pal.netlify.app/">VIEW PROJECT<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/travel-pal">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
+                            {% if project.data.date %}
+                                <div class="project-card-date">
+                                    <i class="far fa-calendar"></i><span>{{ project.date | monthYear }}</span>
+                                </div>
+                            {% endif %}
 
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/logo.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Personal Website</h3>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            This website, currently in its 1st version, is my first ever web development project. I created it with the goal of improving my graphic designing skills and learning web development. My logo & avatar were designed on Adobe Illustrator and the website was designed on Figma and built responsive & mobile-first with pure HTML, CSS, & Vanilla Javascript. I decided to build this website from scratch to truly gain a strong understanding of web development.
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Adobe Illustrator</span>
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://github.com/chungdavid/chungdavid.github.io">GITHUB<i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--project card-->
-                <div class="project-card design development" data-aos="fade-up" data-aos-duration="750">
-                    <div class="project-card-image">
-                        <img src="assets/images/back-inspector.jpg">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Back Inspector</h3>
-                        <div class="project-card-date">
-                            <i class="far fa-calendar"></i><span>Jan 2021</span>
-                        </div>
-                        <div class="hr-container">
-                            <hr class="thick">
-                            <hr class="thin">
-                        </div>
-                        <p class="project-card-description">
-                            After reading a book about back pain, I decided to create Back Inspector - an online tool where users can recieve a self-assessment of their back pain by answering 14 questions. I created this project to improve my web development skills and reinforce some of the concepts I learned from the book.
-                        </p>
-                        <div class="project-card-skills">
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>Vanilla Javascript</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a target="_blank" href="https://back-inspector.netlify.app/">VIEW PROJECT<i class="fas fa-external-link-alt"></i></a>
-                            <a target="_blank" href="https://github.com/chungdavid/back-inspector">GITHUB<i class="fas fa-external-link-alt"></i></a>
+                            <div class="hr-container">
+                                <hr class="thick">
+                                <hr class="thin">
+                            </div>
+                            
+                            <p class="project-card-description">
+                                {{ project.data.description }}
+                            </p>
+                            
+                            {% if project.data.skills %}
+                                <div class="project-card-skills">
+                                    {% for skill in project.data.skills %}
+                                        <span>{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            
+                            {% if project.data.links and project.data.links.length %}
+                                <div class="project-card-links">
+                                    {% for link in project.data.links %}
+                                        <a target="_blank" href="{{ link.url }}">{{ link.text }}<i class="fas fa-external-link-alt"></i></a> 
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
-                </div>
+                {% endfor %}
 
             </div>
         </div>
