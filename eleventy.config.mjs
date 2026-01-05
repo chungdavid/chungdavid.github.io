@@ -20,7 +20,7 @@ export default async function(eleventyConfig) {
 
     eleventyConfig.addFilter("slugify", slugify);
     eleventyConfig.addCollection("projectFilters", function (collectionApi) {
-        const items = collectionApi.getFilteredByGlob("src/content/projects/*.md");
+        const items = collectionApi.getFilteredByGlob("src/content/project-cards/*.md");
         const map = new Map(); // key=slug, value=label
 
         for (const item of items) {
@@ -42,12 +42,12 @@ export default async function(eleventyConfig) {
     eleventyConfig.addCollection("about", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/content/about.md");
     });
-    eleventyConfig.addCollection("projectsSection", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("src/content/projects-section.md");
-    });
     eleventyConfig.addCollection("projects", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("src/content/projects.md");
+    });
+    eleventyConfig.addCollection("projectCards", function (collectionApi) {
         return collectionApi
-        .getFilteredByGlob("src/content/projects/*.md")
+        .getFilteredByGlob("src/content/project-cards/*.md")
         .sort((a, b) => b.date - a.date);
     });
 

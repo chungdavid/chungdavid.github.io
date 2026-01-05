@@ -181,7 +181,7 @@
     </section>
 
     <!--projects-->
-    {% set projectsSection = collections.projectsSection[0] %}
+    {% set projectsSection = collections.projects[0] %}
     <section id="projects" class="section">
         <div class="section-content">
             <h2 class="section-heading">Projects</h2>
@@ -197,7 +197,7 @@
             </div>
             <div class="projects-container">
 
-                {% for project in collections.projects %}
+                {% for project in collections.projectCards %}
                     {% set filterClasses = (project.data.filters or []) | join(" ") %}
                     <!--project card-->
                     <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-duration="750">
