@@ -1,0 +1,1 @@
+Here are some of my projects over the years. See more on [GitHub](https://github.com/chungdavid/chungdavid.github.io) and [notes](/notes/tags/project).

@@ -14,6 +14,9 @@ export default async function(eleventyConfig) {
     eleventyConfig.addCollection("about", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/content/about.md");
     });
+    eleventyConfig.addCollection("projectsSection", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("src/content/projects-section.md");
+    });
     eleventyConfig.addCollection("projects", function (collectionApi) {
         return collectionApi
         .getFilteredByGlob("src/content/projects/*.md")
