@@ -446,7 +446,6 @@ header {
 
 .section-content {
     width: 100%;
-    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -795,6 +794,10 @@ footer {
 
     .bg-text {
         animation: float 3s infinite ease-in-out;
+    }
+    
+    .section-content {
+        max-width: min(1150px, 80vw);
     }
 
     .project-card-image {
