@@ -8,6 +8,9 @@ export default async function(eleventyConfig) {
     eleventyConfig.setInputDirectory('src/');
 	eleventyConfig.setOutputDirectory('_site/');
 
+    eleventyConfig.addCollection("welcome", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("src/content/welcome.md");
+    });
     eleventyConfig.addCollection("about", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/content/about.md");
     });
