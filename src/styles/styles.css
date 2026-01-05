@@ -388,8 +388,9 @@ header {
 
 .showcase-icon-list {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.5em;
     padding-top: 1em;
 }
 
