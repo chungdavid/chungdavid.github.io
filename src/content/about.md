@@ -2,6 +2,9 @@
 image: /assets/images/hobbies.png
 ---
 
-I’m a fourth-year student at McMaster University studying Electrical Engineering. In my free time, I enjoy gardening, playing sports, running, hiking, and playing the guitar! I'm fascinated by robotics & autonomous systems, and the math & software behind it all.
+I’m a final-year student at McMaster University studying Electrical & Biomedical Engineering. I'm fascinated by robotics & autonomous systems, and the math & software behind it all. My current interests, presented very broadly, are:
+    
+1. Exploring ways to ensure that learning-based methods used in robot perception and control, either separately or end-to-end, are provably safe.
+2. Developing perception and control systems for mobile robots that are robust in dynamic and noisy environments.
 
-I know for sure that I want to travel the world. One of my many life goals is to explore the planet and experience new places, cultures, and cuisines! There's a whole different world beyond our borders I can't wait to experience it. So, if you have any travel recommendations, please let me know and I'll add it to my already-overfilled travel bucket list!
+In my free time, I love playing sports, running, hiking, and playing the guitar!
