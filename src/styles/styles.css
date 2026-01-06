@@ -86,6 +86,7 @@ li {
 body {
     font-family: "Roboto";
     background-color: var(--blue-100);
+    font-size: 112.5%;
 }
 
 /* loading screen */
@@ -137,7 +138,7 @@ body {
 
 h1 {
     font-weight: 700;
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: var(--blue-600);
 }
 
@@ -149,7 +150,7 @@ h1 {
 
 .welcome-text p {
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.667em;
     color: var(--black);
 }
 
@@ -164,7 +165,7 @@ h1 {
 .markdown-content p {
     font-weight: 400;
     color: var(--black);
-    font-size: 1.25 em;
+    font-size: 1.125em;
     margin-bottom: 0.75em;
 }
 
@@ -250,7 +251,7 @@ footer span {
 }
 
 #avatar {
-    width: 16em;
+    width: 17em;
 }
 
 .skin-color{fill:#F1C27C;}
@@ -395,7 +396,7 @@ header {
 }
 
 .showcase-icon {
-    width: 1.5em;
+    width: 1.6875em;
     fill: var(--blue-400)
 }
 
@@ -707,13 +708,7 @@ footer {
 /*large tablet & small laptop styles*/
 @media (min-width: 768px) {
     body {
-        font-size: 18px;
-    }
-
-    .welcome-text h2,
-    .project-card-body,
-    footer {
-        font-size: 16px;
+        font-size: 100%;
     }
 
     #showcase,
@@ -770,13 +765,7 @@ footer {
 /*laptop & desktop styles*/
 @media (min-width: 1200px) {
     body {
-        font-size: 20px;
-    }
-
-    .welcome-text h2,
-    .project-card-body,
-    footer {
-        font-size: 18px;
+        font-size: 112.5%;
     }
 
     #avatar {
@@ -816,7 +805,7 @@ footer {
 /*large desktop styles*/
 @media (min-width: 1600px) {
     body {
-        font-size: 24px;
+        font-size: 125%;
     }
 
     header {
@@ -832,13 +821,7 @@ footer {
     }
 
     #showcase {
-        font-size: 28px;
+        font-size: 125%;
         padding-top: 4rem;
-    }
-
-    .welcome-text h2,
-    .project-card-body,
-    footer {
-        font-size: 20px;
     }
 }
