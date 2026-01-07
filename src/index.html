@@ -209,7 +209,7 @@
                                    --project-card-img-bg: {{ imageBackground }};"
                         >
                             {% if project.data.image %}
-                                <img src="{{ project.data.image }}">
+                                <img src="{{ project.data.image }}" loading="lazy" decoding="async">
                             {% else %}
                                 🛠️
                             {% endif %}
