@@ -48,6 +48,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.addCollection("projectCards", function (collectionApi) {
         return collectionApi
         .getFilteredByGlob("src/content/project-cards/*.md")
+        .filter(item => !item.data.hidden)
         .sort((a, b) => b.date - a.date);
     });
 
