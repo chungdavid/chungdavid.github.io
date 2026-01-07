@@ -197,9 +197,21 @@
                     {% set filterClasses = (project.data.filters or []) | join(" ") %}
                     <!--project card-->
                     <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-duration="750">
-                        <div class="project-card-image">
+                        {% set imageFit = project.data.imageFit or 'cover' %}
+                        {% set imagePadding = project.data.imagePadding or '0' %}
+                        {% set imagePosition = project.data.imagePosition or '50% 50%' %}
+                        {% set imageBackground = project.data.imageBackground or '#fefefe' %}
+                        <div
+                            class="project-card-image"
+                            style="--project-card-img-fit: {{ imageFit }};
+                                   --project-card-img-pad: {{ imagePadding }};
+                                   --project-card-img-pos: {{ imagePosition }};
+                                   --project-card-img-bg: {{ imageBackground }};"
+                        >
                             {% if project.data.image %}
                                 <img src="{{ project.data.image }}">
+                            {% else %}
+                                🛠️
                             {% endif %}
                         </div>
                         <div class="project-card-body">

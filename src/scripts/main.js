@@ -36,7 +36,7 @@ document.querySelectorAll(".nav-link").forEach(function(a) {
 //dark mode function
 const darkModeSwitch = document.getElementById("checkbox");
 const currentMode = localStorage.getItem("mode") ? localStorage.getItem("mode") : null;
-const projectImg = document.querySelectorAll(".project-card-image img");
+const projectImg = document.querySelectorAll(".project-card-image");
 
 if (currentMode) {
     document.documentElement.setAttribute("mode", currentMode);
