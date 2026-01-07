@@ -592,6 +592,7 @@ input[type="radio"]:checked + .project-filter {
     height: 1px;
     border: 0;
     transition: all 0.5s ease;
+    transform-origin: left;
 }
 
 .thick {
@@ -824,11 +825,7 @@ footer {
     }
 
     .project-card:hover .thick {
-        width: 100%;
-    }
-    
-    .project-card:hover .thin {
-        width: 0;
+        transform: scaleX(2);
     }
 }
 
