@@ -52,7 +52,7 @@ export default async function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("monthYear", function (dateObj) {
-        return dateObj.toLocaleDateString("en-US", {month: "short", year: "numeric"});
+        return dateObj.toLocaleDateString("en-US", {month: "short", year: "numeric", timeZone: "UTC"});
     });
 };
 
