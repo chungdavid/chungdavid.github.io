@@ -752,7 +752,7 @@ footer {
     }
 
     .about-img {
-        width: 40%;
+        max-width: 30%;
     }
     
     .hamburger,
