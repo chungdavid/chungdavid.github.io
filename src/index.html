@@ -196,7 +196,7 @@
                 {% for project in collections.projectCards %}
                     {% set filterClasses = (project.data.filters or []) | join(" ") %}
                     <!--project card-->
-                    <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-once="true" data-aos-duration="750">
+                    <div class="project-card{% for filter in (project.data.filters or []) %} filter-{{ filter | slugify }}{% endfor %}" data-aos="fade-up" data-aos-duration="750">
                         {% set imageFit = project.data.imageFit or 'cover' %}
                         {% set imagePadding = project.data.imagePadding or '0' %}
                         {% set imagePosition = project.data.imagePosition or '50% 50%' %}
